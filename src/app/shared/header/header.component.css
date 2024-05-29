@@ -1,0 +1,45 @@
+.navbar {
+  position: relative;
+  z-index: 1;
+}
+.nav-item,
+.navbar-brand {
+  padding: 10px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 4px 15px;
+  border-radius: 50px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a.router-link-active {
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 50px;
+}
+.offcanvas-header .item {
+  padding: 15px 0;
+}
+.offcanvas-header .btn-close {
+  top: 10%;
+  left: 80%;
+}
+.offcanvas {
+  width: 80% !important;
+}
+/* Media Query for responsive */
+
+@media (min-width: 992px) {
+  .prof {
+    margin-right: 25px;
+    padding: 4px 15px !important;
+    color: #fff;
+  }
+  .prof-active {
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 50px;
+  }
+}

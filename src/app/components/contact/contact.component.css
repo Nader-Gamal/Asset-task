@@ -1,0 +1,38 @@
+#contact {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  z-index: 0;
+}
+#carouselExampleFade {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  height: 60%;
+}
+
+.carousel-item {
+  position: relative;
+  height: 100%;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 100%;
+}
+.header {
+  margin-top: calc(-35vh);
+  position: relative;
+  z-index: 2;
+}
+/* Media Query For Responsive Design */
+@media (max-width: 767px) {
+  .cont-img {
+    display: none;
+  }
+}

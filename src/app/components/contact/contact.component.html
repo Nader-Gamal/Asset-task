@@ -1,0 +1,96 @@
+<section id="contact">
+  <div id="carouselExampleFade" class="carousel slide carousel-fade">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          src="../../../assets/images/abstract-studio-background-texture-light-blue-gray-gradient-wall-flat-floor-product.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div
+          class="text-white text-center position-absolute top-50 start-50 translate-middle"
+        >
+          <h2 class="h1">Contact Us</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container header">
+    <div class="row d-flex align-items-center">
+      <div
+        *ngIf="!formSubmitted; else confirmationMessage"
+        class="col-md-6 d-flex flex-column"
+      >
+        <form class="example-form" (ngSubmit)="onSubmit()" [formGroup]="form">
+          <!-- name -->
+          <mat-form-field class="example-full-width w-100">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" />
+            <mat-error *ngIf="nameFormControl.hasError('required')">
+              Name is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="nameFormControl.hasError('minlength')">
+              Name must be at least 3 characters long
+            </mat-error>
+          </mat-form-field>
+          <!-- email -->
+          <mat-form-field class="example-full-width w-100">
+            <mat-label>Email</mat-label>
+            <input
+              type="email"
+              matInput
+              formControlName="email"
+              placeholder="Ex. pat@example.com"
+            />
+            <mat-error
+              *ngIf="
+                emailFormControl.hasError('email') &&
+                !emailFormControl.hasError('required')
+              "
+            >
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <!-- phone -->
+          <mat-form-field class="example-full-width w-100">
+            <mat-label>Telephone</mat-label>
+            <input type="tel" matInput formControlName="phone" />
+            <mat-error *ngIf="phoneFormControl.hasError('required')">
+              Telephone is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="phoneFormControl.hasError('pattern')">
+              Please enter a valid telephone number
+            </mat-error>
+          </mat-form-field>
+          <!-- message -->
+          <mat-form-field class="example-full-width w-100">
+            <mat-label>Message</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+          <!-- submit button -->
+          <div class="me-auto w-100">
+            <button
+              mat-raised-button
+              color="primary"
+              class="px-4"
+              type="submit"
+            >
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+      <ng-template #confirmationMessage>
+        <div class="col-md-6">
+          <h2 class="text-success">Your message has been sent!</h2>
+        </div>
+      </ng-template>
+      <div class="col-md-6 text-center cont-img">
+        <img src="assets/images/cover.png" alt="" class="w-75" />
+      </div>
+    </div>
+  </div>
+</section>

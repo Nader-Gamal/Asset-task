@@ -1,0 +1,147 @@
+<header [ngClass]="{ 'bg-secondary': isBgBlack }">
+  <nav class="navbar navbar-expand-lg bg-transparent w-75 m-auto">
+    <div class="container">
+      <!-- logo -->
+      <a class="navbar-brand text-white" routerLink="/home">LOGO</a>
+      <!-- responsive menu -->
+      <button
+        mat-mini-fab
+        color="prime"
+        class="navbar-toggler z-3"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasWithBothOptions"
+        aria-controls="offcanvasWithBothOptions"
+        aria-label="Toggle navigation"
+      >
+        <button mat-icon-button class="text-white">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </button>
+      <div
+        class="offcanvas offcanvas-start"
+        data-bs-scroll="true"
+        tabindex="-1"
+        id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel"
+      >
+        <div class="offcanvas-header position-relative">
+          <div class="nav-items w-100 m-5">
+            <div class="item">
+              <a class="nav-link" aria-current="page" routerLink="/home"
+                >Home</a
+              >
+            </div>
+            <mat-divider></mat-divider>
+            <div class="item">
+              <a class="nav-link" aria-current="page" routerLink="/about"
+                >About</a
+              >
+            </div>
+            <mat-divider></mat-divider>
+            <div class="item">
+              <a class="nav-link" aria-current="page" routerLink="/contact"
+                >Contact</a
+              >
+            </div>
+            <mat-divider></mat-divider>
+            <ng-container *ngIf="!isLoggedIn(); else loggedInTemplate">
+              <div class="item">
+                <a class="nav-link" aria-current="page" routerLink="/login"
+                  >Login</a
+                >
+              </div>
+              <mat-divider></mat-divider>
+              <div class="item">
+                <a class="nav-link" routerLink="/register">Register</a>
+              </div>
+              <mat-divider></mat-divider>
+            </ng-container>
+            <ng-template #loggedInTemplate>
+              <mat-divider></mat-divider>
+              <div class="item">
+                <a
+                  class="nav-link prof"
+                  [ngClass]="{ 'prof-active': isActive }"
+                  routerLink="/user"
+                  >Profile</a
+                >
+              </div>
+              <div class="item">
+                <button mat-raised-button color="warn" (click)="logout()">
+                  Logout
+                </button>
+              </div>
+            </ng-template>
+          </div>
+          <button
+            type="button"
+            class="btn-close position-absolute"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+
+      <!-- nav tabs -->
+      <div
+        class="collapse navbar-collapse m-auto w-100"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              aria-current="page"
+              routerLink="/home"
+              routerLinkActive="router-link-active"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/about"
+              routerLinkActive="router-link-active"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/contact"
+              routerLinkActive="router-link-active"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div
+        class="collapse navbar-collapse me-auto w-100 ms-5"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <ng-container *ngIf="!isLoggedIn(); else loggedInTemplate">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                aria-current="page"
+                routerLink="/login"
+                routerLinkActive="router-link-active"
+                >Login</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/register"
+                routerLinkActive="router-link-active"
+                >Register</a
+              >
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

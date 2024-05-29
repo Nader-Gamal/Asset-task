@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "nader",
+      "name": "Nader Gamal",
+      "password": "Nader@123",
+      "email": "nadergamal@gmail.com"
+    },
+    {
+      "id": "hatem",
+      "name": "Hatem Gamal",
+      "password": "Hatem@123",
+      "email": "hatem@gmail.com"
+    },
+    {
+      "id": "mohra",
+      "name": "mohrar tharwat",
+      "password": "Mohra@123",
+      "email": "mohra@gmail.com"
+    },
+    {
+      "id": "ali",
+      "name": "Ali Ali",
+      "password": "Ali@12345",
+      "email": "Ali@gmail.com"
+    }
+  ]
+}

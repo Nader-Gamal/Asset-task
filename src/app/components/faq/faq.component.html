@@ -1,0 +1,59 @@
+<section>
+  <div class="header d-flex">
+    <!-- Tabs List -->
+    <div class="d-flex flex-column">
+      <!-- Loop through each tab to create a button for it -->
+      <button
+        *ngFor="let tab of tabs; let i = index"
+        class="custom-btn h5"
+        type="button"
+        (click)="toggleTab(i)"
+        [ngClass]="{ 'active-tab': currentOpenTab === i }"
+        [attr.aria-expanded]="currentOpenTab === i"
+        [attr.aria-controls]="'collapseWidthExample' + i"
+      >
+        {{ tab.title }}
+      </button>
+    </div>
+    <!-- Questions List -->
+    <!-- Loop through each tab to display its content if it is the current open tab -->
+    <div *ngFor="let tab of tabs; let i = index">
+      <div
+        *ngIf="currentOpenTab === i"
+        class="collapse collapse-horizontal ps-5 show"
+        [attr.id]="'collapseWidthExample' + i"
+      >
+        <div class="card card-body">
+          <!-- Accordion container for questions and answers -->
+          <div class="accordion" [attr.id]="'accordionExample' + i">
+            <!-- Loop through each item in the tab's content to create accordion items -->
+            <div
+              class="accordion-item"
+              *ngFor="let item of tab.content; let j = index"
+            >
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  [attr.data-bs-target]="'#collapse' + i + '-' + j"
+                  aria-expanded="false"
+                  [attr.aria-controls]="'collapse' + i + '-' + j"
+                >
+                  <h5 class="fw-bold">{{ item.question }}</h5>
+                </button>
+              </h2>
+              <div
+                [attr.id]="'collapse' + i + '-' + j"
+                class="accordion-collapse collapse"
+                [attr.data-bs-parent]="'#accordionExample' + i"
+              >
+                <div class="accordion-body">{{ item.answer }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
