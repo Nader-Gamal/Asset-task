@@ -26,3 +26,48 @@ h5 {
 h6 {
   font-size: 1rem !important;
 }
+
+/* Media queries for responsive font sizes */
+@media only screen and (max-width: 768px) {
+  /* Adjust font sizes for smaller screens */
+  h1 {
+    font-size: 2rem !important;
+  }
+  h2 {
+    font-size: 1.75rem !important;
+  }
+  h3 {
+    font-size: 1.5rem !important;
+  }
+  h4 {
+    font-size: 1.25rem !important;
+  }
+  h5 {
+    font-size: 1.1rem !important;
+  }
+  h6 {
+    font-size: 1rem !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  /* Adjust font sizes for even smaller screens */
+  h1 {
+    font-size: 1.75rem !important;
+  }
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  h3 {
+    font-size: 1.25rem !important;
+  }
+  h4 {
+    font-size: 1.1rem !important;
+  }
+  h5 {
+    font-size: 1rem !important;
+  }
+  h6 {
+    font-size: 0.9rem !important;
+  }
+}
